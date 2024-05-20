@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const database = require('./Database/database');
 
-const  typeDefs = require('./GraphQL/index');
-const resolvers = require('./Controller/index');
+const typeDefs = require('./Schema/index');
+const resolvers = require('./Resolver/index');
 const { ApolloServer, gql } = require('apollo-server');
 
 const app = express();

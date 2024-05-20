@@ -1,7 +1,8 @@
 const { gql } = require('apollo-server-express');
-const userType = require('./../GraphQL/userSchema');
+const userType = require('./userSchema');
 
 const taskType = require('./taskType');
+const commentType = require('./commentType');
 
 const baseType = gql`
   type Query {
@@ -13,4 +14,4 @@ const baseType = gql`
   }
 `;
 
-module.exports = [baseType, userType, taskType];
+module.exports = [baseType, userType, taskType, commentType];
