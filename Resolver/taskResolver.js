@@ -1,13 +1,15 @@
 const Task = require('../Model/taskModel');
 const User = require('../Model/userModel');
+const Project = require('../Model/projectModel');
+const Comment = require('../Model/commentModel');
 
 const taskResolver = {
   Query: {
     getTask: async (parent, args) => {
-      return await Task.findById(args.id).populate('assignto');
+      return await Task.findById(args.id).populate('assignto').populate('projectName');
     },
     getTasks: async () => {
-      return await Task.find().populate('assignto');
+      return await Task.find().populate('assignto').populate('projectName');
     },
   },
   Mutation: {
@@ -34,6 +36,12 @@ const taskResolver = {
     assignto: async (parent) => {
       return await User.findById(parent.assignto);
     },
+    projectName: async (parent) => {
+      return await Project.findById(parent.projectName);
+    },
+    comments: async(parent)=>{
+      return await Comment.find({taskId:parent.id})
+    }
   },
 };
 

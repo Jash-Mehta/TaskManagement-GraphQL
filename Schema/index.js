@@ -3,6 +3,7 @@ const userType = require('./userSchema');
 
 const taskType = require('./taskType');
 const commentType = require('./commentType');
+const projectType = require('./projectType');
 
 const baseType = gql`
   type Query {
@@ -14,4 +15,4 @@ const baseType = gql`
   }
 `;
 
-module.exports = [baseType, userType, taskType, commentType];
+module.exports = [baseType, userType, taskType, commentType,projectType];

@@ -45,7 +45,8 @@ const commentResolvers = {
     },
     userId: async (parent) => {
       return await User.findById(parent.userId);
-    }
+    },
+   
   }
 };
 

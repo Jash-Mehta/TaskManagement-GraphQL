@@ -6,7 +6,8 @@ const taskSchema = new mongoose.Schema({
     required: true,
   },
   projectName: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Project',
     required: true,
   },
   assignto: {
@@ -26,6 +27,8 @@ const taskSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+
 });
 
 const Task = mongoose.model('Task', taskSchema);

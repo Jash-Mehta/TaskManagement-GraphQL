@@ -17,7 +17,8 @@ const resolvers = {
         name: args.name,
         email: args.email,
         password: args.password,
-        employmentType: args.employmentType
+        employmentType: args.employmentType,
+        admin:args.admin
       });
 
       try {

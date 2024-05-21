@@ -19,6 +19,11 @@ const userModel = mongoose.Schema({
     employmentType: {
         type: String,
         require: true
+    },
+    admin:{
+        type:Number,
+        require:false,
+        default:0
     }
 });
 
